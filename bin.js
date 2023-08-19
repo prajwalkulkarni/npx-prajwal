@@ -1,13 +1,29 @@
 #!/usr/bin/env node
-//import yargs from "yargs"
 const yargs = require("yargs");
-
+const { profiles, projects, contact, oneLiner, work } = require("./data");
 const args = Object.keys(yargs.argv);
 args.pop();
 args.shift();
-if(args.length){
-    console.log("Ok tested");
-    return;
+if (args.length) {
+  args.forEach((value) => {
+    switch (value) {
+      case "profiles":
+        console.table(profiles);
+        break;
+      case "projects":
+        console.table(projects);
+        break;
+      case "contact":
+        console.table(contact);
+        break;
+      default:
+        console.log(
+          "Invalid argument passed, please try again with a correct argument"
+        );
+    }
+  });
+
+  process.exit();
 }
 
 console.log(`
@@ -16,18 +32,30 @@ Hi, I'm
 █▀▀ █▀▄ █▀█ █▄█ ▀▄▀▄▀ █▀█ █▄▄   █░█ █▄█ █▄▄ █░█ █▀█ █▀▄ █░▀█ █                                                                                                                                                                                                                                                                                                               
 `);
 
-const oneLiner = "I'm a passionate Frontend developer architecting meaningful applications on the web."
-
-for(let char in oneLiner){
-    setTimeout(() => {
-        process.stdout.write(oneLiner[char])
-    }, 50*char)
+function awaitTypingText() {
+  return new Promise((resolve, _) => {
+    for (let char in oneLiner) {
+      setTimeout(() => {
+        process.stdout.write(oneLiner[char]);
+        if (+char === oneLiner.length - 1) {
+          resolve();
+        }
+      }, 50 * char);
+    }
+  });
 }
 
-setTimeout(()=>{
+awaitTypingText()
+  .then(() => {
+    work.forEach((item) => {
+      process.stdout.write(`-> ${item}\n`);
+    });
+  })
+  .then(() => {
     console.log(`\nTo know more:
---profiles: Developer profiles and blogs
---projects: Projects I've worked on
---contact: Contact me 
-`)
-}, (oneLiner.length+1)*50);
+    Run: npx . <arg>, where <arg> is one of:
+    --profiles: Developer profiles and blogs
+    --projects: Projects I've worked on and the open source projects I've contributed to
+    --contact: Contact me 
+    `);
+  });
