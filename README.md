@@ -13,13 +13,13 @@ Creating and publishing your npm package is rather an easy task, however there a
 
 You can either fork and clone this repository, make the necessary changes and publish it
 (OR)
-Initialize the project, configure the necessary files, test locally and publish it.
+Initialize the project, configure the necessary files, test locally, and publish it.
 
-1. Clone this repository and make necessay changes
+## 1. Clone this repository and make the necessary changes
 
-If you're cloning this repository, there are only few changes you'd need to make.
+If you're cloning this repository, there are only a few changes you'd need to make.
 Delete `package.json` and `yarn.lock`.
-Setup your remote origin pointing to the forked repository.
+Set up your remote origin pointing to the forked repository.
 Run `npm init` and enter the required details.
 After your `package.json` is generated. Add the below configuration properties to it:
 
@@ -43,10 +43,10 @@ To test things locally, run `npx .` from the project directory.
 
 ### Publishing
 
-Publishing your package to npm is pretty straightforward, as there's a workflow already setup that publishes your changes when you commit your changes on remote main branch.
+Publishing your package to npm is pretty straightforward, as there's a workflow already setup that publishes your changes when you commit your changes on the remote main branch.
 Before pushing your changes, you'd have to add your access token to your repository.
-You can obtain your access token from the npm website by cliking on your profile > access tokens > generate new token.
+You can obtain your access token from the npm website by clicking on your profile > access tokens > generate new token.
 
-Add this token to your reporsitory by navigating to your project > settings > secrets and variables(present on the left pane) > Actions > New repository secret > set the key as `npm_token`.
+Add this token to your repository by navigating to your project > settings > secrets and variables(present on the left pane) > Actions > New repository secret > set the key as `npm_token`.
 
 There you have it, run your package by executing `npx <your-package-name>`
