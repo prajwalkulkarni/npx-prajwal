@@ -14,7 +14,7 @@
   "keywords": [
     "prajwal",
     "npx",
-    "npx-prajwal"
+    "npx @prajwal/whoami"
   ],
   "author": "Prajwal Kulkarni",
   "license": "ISC",
@@ -25,5 +25,8 @@
   "bin": "./bin.js",
   "dependencies": {
     "yargs": "^17.7.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
