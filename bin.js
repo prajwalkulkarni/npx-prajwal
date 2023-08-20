@@ -31,11 +31,11 @@ Hi, I'm
 █▀█ █▀█ ▄▀█ ░░█ █░█░█ ▄▀█ █░░   █▄▀ █░█ █░░ █▄▀ ▄▀█ █▀█ █▄░█ █
 █▀▀ █▀▄ █▀█ █▄█ ▀▄▀▄▀ █▀█ █▄▄   █░█ █▄█ █▄▄ █░█ █▀█ █▀▄ █░▀█ █                                                                                                                                                                                                                                                                                                               
 `);
-
+const timeoutIds = [];
 function awaitTypingText() {
   return new Promise((resolve, _) => {
     for (let char in oneLiner) {
-      setTimeout(() => {
+      timeoutIds[char] = setTimeout(() => {
         process.stdout.write(oneLiner[char]);
         if (+char === oneLiner.length - 1) {
           resolve();
@@ -45,17 +45,18 @@ function awaitTypingText() {
   });
 }
 
-awaitTypingText()
-  .then(() => {
-    work.forEach((item) => {
-      process.stdout.write(`-> ${item}\n`);
-    });
-  })
-  .then(() => {
-    console.log(`\nTo know more:
-    Run: npx . <arg>, where <arg> is one of:
-    --profiles: Developer profiles and blogs
-    --projects: Projects I've worked on and the open source projects I've contributed to
-    --contact: Contact me 
-    `);
+awaitTypingText().then(() => {
+  work.forEach((item) => {
+    process.stdout.write(`-> ${item}\n`);
   });
+  timeoutIds.forEach((id) => {
+    clearTimeout(id);
+  });
+  timeoutIds.length = 0;
+  console.log(`\nTo know more:
+Run: npx . <arg>, where <arg> is one of:
+--profiles: Developer profiles and blogs
+--projects: Projects I've worked on and the open source projects I've contributed to
+--contact: Contact me 
+    `);
+});

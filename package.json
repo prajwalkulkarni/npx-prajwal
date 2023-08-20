@@ -1,5 +1,5 @@
 {
-  "name": "npx-prajwal",
+  "name": "@prajwal/whoami",
   "version": "1.0.0",
   "description": "About me",
   "main": "bin.js",
