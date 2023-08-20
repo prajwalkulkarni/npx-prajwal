@@ -46,7 +46,6 @@ const contact = [
     Value: "https://www.linkedin.com/in/prajwal-kulkarni/",
   },
   { Name: "Email", Value: "prajwalkulkarni76@gmail.com" },
-  { Name: "Phone No", Value: "+91 8105976325" },
 ];
 
 module.exports = {

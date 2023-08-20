@@ -54,7 +54,7 @@ awaitTypingText().then(() => {
   });
   timeoutIds.length = 0;
   console.log(`\nTo know more:
-Run: npx @prajwal/whoami <arg>, where <arg> is one of:
+Run: npx prajwal-whoami <arg>, where <arg> is one of:
 --profiles: Developer profiles and blogs
 --projects: Projects I've worked on and the open source projects I've contributed to
 --contact: Contact me 
