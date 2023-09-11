@@ -64,7 +64,7 @@ To support passing arguments and reading them, you may have to use a dependency 
 
 Additionally, you can also add a workflow that publishes your package to the npm registry. You may refer to the workflow defined in this project by navigating to `.github/workflows/npm-publish.yml`.
 
-### Liked the project? Give it a :star:
+# Liked the project? Give it a :star:
 
 Learned something new? Consider giving this repo a :star:. It would encourage me to publish more such cool projects.
 Thank you!
