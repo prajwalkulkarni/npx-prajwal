@@ -50,3 +50,21 @@ You can obtain your access token from the npm website by cliking on your profile
 Add this token to your reporsitory by navigating to your project > settings > secrets and variables(present on the left pane) > Actions > New repository secret > set the key as `npm_token`.
 
 There you have it, run your package by executing `npx <your-package-name>`
+
+2. Initialize the project from scratch
+
+Get started by running `npm init` and enter the required details.
+
+Once the `package.json` file is created, add the `bin` property and point it to your `bin.js` file.
+
+Whenever the command `npx <your-package-name>` is executed, it is the `bin` file that runs.
+So, anything that'd you'd want to show on running the command should go into this file.
+
+To support passing arguments and reading them, you may have to use a dependency like `yargs`.
+
+Additionally, you can also add a workflow that publishes your package to the npm registry. You may refer to the workflow defined in this project by navigating to `.github/workflows/npm-publish.yml`.
+
+### Liked the project? Give it a :star:
+
+Learned something new? Consider giving this repo a :star:. It would encourage me to publish more such cool projects.
+Thank you!
