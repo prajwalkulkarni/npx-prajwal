@@ -51,7 +51,7 @@ Add this token to your repository by navigating to your project > settings > sec
 
 There you have it, run your package by executing `npx <your-package-name>`
 
-2. Initialize the project from scratch
+## 2. Initialize the project from scratch
 
 Get started by running `npm init` and enter the required details.
 
