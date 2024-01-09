@@ -23,14 +23,25 @@ const work = [
 
 const projects = [
   {
-    Name: "NexPortal",
-    Link: "https://www.npmjs.com/package/nextportal",
-    Description: "Lightweight and easy-to-use portal component for NextJS",
+    Name: "Blackjack21",
+    Link: "https://www.npmjs.com/package/blackjack21",
+    Description: "Blackjack on command line",
+  },
+  {
+    Name: "Take a break",
+    Link: "https://chrome.google.com/webstore/detail/take-a-break/oifmahnepecgegpdiomjikkmfmnlbdjo?hl=en&authuser=0",
+    Description:
+      "Chrome extension that monitors your screen time and reminds you to take a break periodically",
   },
   {
     Name: "Bingenow",
     Link: "https://bingenow.net",
     Description: "Stream movies and tv series for free",
+  },
+  {
+    Name: "NexPortal",
+    Link: "https://www.npmjs.com/package/nextportal",
+    Description: "Lightweight and easy-to-use portal component for NextJS",
   },
   {
     Name: "Miscellaneous",
