@@ -16,7 +16,7 @@ const profiles = [
 ];
 
 const work = [
-  "Frontend developer at KredX.",
+  "Frontend developer at Meesho, prev @KredX.",
   "Open Source enthusiast.",
   "Currently learning: Advanced TypeScript and NodeJS.",
 ];
